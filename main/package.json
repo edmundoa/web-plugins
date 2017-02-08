@@ -2,7 +2,7 @@
   "name": "web-plugins-main",
   "version": "1.0.0",
   "description": "Example app capable of loading web plugins",
-  "main": "index.js",
+  "main": "app/app.js",
   "scripts": {
     "build": "webpack --color --progress"
   },
