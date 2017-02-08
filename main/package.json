@@ -1,0 +1,39 @@
+{
+  "name": "web-plugins-main",
+  "version": "1.0.0",
+  "description": "Example app capable of loading web plugins",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --color --progress"
+  },
+  "babel": {
+    "presets": [
+      [
+        "latest",
+        {
+          "es2015": {
+            "modules": false
+          }
+        }
+      ],
+      "react"
+    ]
+  },
+  "author": "Edmundo Alvarez",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "babel-polyfill": "6.20.0",
+    "react": "15.4.1",
+    "react-dom": "15.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "6.21.0",
+    "babel-loader": "6.2.10",
+    "babel-preset-latest": "6.16.0",
+    "babel-preset-react": "6.16.0",
+    "cheerio": "0.22.0",
+    "html-loader": "0.4.4",
+    "html-webpack-plugin": "2.24.1",
+    "webpack": "2.2.1"
+  }
+}
