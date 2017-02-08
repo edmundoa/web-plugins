@@ -1,32 +1,37 @@
-// Important modules this config uses
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = require('./webpack.base.babel')({
+module.exports = {
   entry: {
-    myApp: path.join(process.cwd(), 'app/app.js'),
+    'web-plugins-main': path.resolve(__dirname, 'app/app.js')
   },
-
   output: {
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].chunk.js',
-    publicPath: ""
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].js'
   },
-
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: path.join(__dirname, '/node_modules/')
+    }, {
+      test: /\.css$/,
+      loader: 'style-loader'
+    }, {
+      test: /\.jpe?g$|\.gif$|\.png$/i,
+      loader: 'url-loader?limit=10000'
+    }
+    ]
+  },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      children: true,
-      minChunks: 2,
-      async: true,
-    }),
-
-    // Minify and optimize the index.html
     new HtmlWebpackPlugin({
       template: 'app/index.html',
       minify: false,
-      inject: true,
-    }),
+      inject: true
+    })
   ],
-});
+  target: 'web', // Make web variables accessible to webpack, e.g. window
+  stats: false, // Don't show stats in the console
+  progress: true
+};
