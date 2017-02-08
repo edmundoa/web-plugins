@@ -1,9 +1,9 @@
-// Import all the third party stuff
 import React from 'react';
+import { HelloWorldComponent } from 'web-plugins-main';
 
 const Plugin = React.createClass({
   render() {
-    return <p>This is a plugin!</p>;
+    return <HelloWorldComponent message="This is a plugin!"/>;
   },
 });
 

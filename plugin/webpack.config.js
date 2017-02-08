@@ -1,24 +1,28 @@
-// Important modules this config uses
-const path = require('path');
-const webpack = require('webpack');
+var path = require('path');
+var webpack = require('webpack');
 
-module.exports = require('./webpack.base.babel')({
+module.exports = {
   entry: {
-    plugin: path.join(process.cwd(), 'app/plugin.js'),
+    'plugin': path.resolve(__dirname, 'app/plugin.js')
   },
-
   output: {
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].chunk.js',
-    publicPath: ""
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].js'
   },
-
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      children: true,
-      minChunks: 2,
-      async: true,
-    }),
-  ],
-});
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: path.join(__dirname, '/node_modules/')
+    }, {
+      test: /\.css$/,
+      loader: 'style-loader'
+    }, {
+      test: /\.jpe?g$|\.gif$|\.png$/i,
+      loader: 'url-loader?limit=10000'
+    }
+    ]
+  },
+  target: 'web', // Make web variables accessible to webpack, e.g. window
+  progress: true
+};
