@@ -4,9 +4,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = require('./webpack.base.babel')({
-  entry: [
-    path.join(process.cwd(), 'app/app.js'),
-  ],
+  entry: {
+    myApp: path.join(process.cwd(), 'app/app.js'),
+  },
 
   output: {
     filename: '[name].[chunkhash].js',
