@@ -5,11 +5,13 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import HelloWorldComponent from './HelloWorldComponent';
+import MainApp from './MainApp';
 
-ReactDOM.render(
-  <div>
-    <HelloWorldComponent message="This is dog!"/>
-  </div>,
-  document.getElementById('app')
-);
+window.onload = () => {
+  ReactDOM.render(
+    <MainApp />,
+    document.getElementById('app')
+  );
+};
+
+export * from './exports';
