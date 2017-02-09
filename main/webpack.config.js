@@ -4,7 +4,12 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    'web-plugins-main': path.resolve(__dirname, 'app/app.js')
+    'web-plugins-main': path.resolve(__dirname, 'app/app.js'),
+    vendor: [
+      'babel-polyfill',
+      'react',
+      'react-dom'
+    ]
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -27,6 +32,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'manifest']
+    }),
     new HtmlWebpackPlugin({
       template: 'app/index.html',
       minify: false,
