@@ -36,9 +36,9 @@ module.exports = {
       name: ['vendor', 'manifest']
     }),
     new HtmlWebpackPlugin({
-      template: 'app/index.html',
+      template: 'index.html',
       minify: false,
-      inject: true
+      inject: false
     })
   ],
   target: 'web', // Make web variables accessible to webpack, e.g. window
