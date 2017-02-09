@@ -2,11 +2,11 @@
   "name": "web-plugins-main",
   "version": "1.0.0",
   "description": "Example app capable of loading web plugins",
-  "main": "build/web-plugins-main.js",
-  "module": "app/index.js",
+  "main": "lib/app.js",
+  "module": "app/app.js",
   "scripts": {
     "compile": "babel -d lib/ app/",
-    "build": "webpack --color --progress"
+    "build": "webpack --color"
   },
   "babel": {
     "presets": [
