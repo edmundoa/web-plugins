@@ -3,21 +3,15 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    'plugin': path.resolve(__dirname, 'app/plugin.js')
+    'plugin1': path.resolve(__dirname, 'app/index.js')
   },
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js'
   },
-  externals: [
-    {
-      'web-plugins-main': {
-        commonjs: 'web-plugins-main',
-        commonjs2: 'web-plugins-main',
-        amd: 'web-plugins-main'
-      }
-    }
-  ],
+  externals: {
+    'web-plugins-main': 'WebPluginsMain',
+  },
   module: {
     loaders: [{
       test: /\.js$/,

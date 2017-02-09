@@ -1,10 +1,10 @@
 {
-  "name": "web-plugins-plugin",
+  "name": "web-plugins-plugin1",
   "version": "1.0.0",
-  "description": "Example plugin",
-  "main": "app/plugin.js",
+  "description": "Example plugin 1",
+  "main": "app/index.js",
   "scripts": {
-    "build": "webpack --color --progress"
+    "build": "webpack --color"
   },
   "babel": {
     "presets": [
