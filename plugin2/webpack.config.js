@@ -1,5 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
+// This could also require an external npm module including the manifest
+var vendorManifest = require('../main/manifests/vendor-manifest.json');
 
 module.exports = {
   entry: {
@@ -26,6 +28,12 @@ module.exports = {
     }
     ]
   },
+  plugins: [
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: vendorManifest,
+    }),
+  ],
   target: 'web', // Make web variables accessible to webpack, e.g. window
   progress: true
 };
