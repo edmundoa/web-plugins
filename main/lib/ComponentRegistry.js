@@ -1,8 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 var plugins = {};
 var callbacks = [];
 
@@ -33,4 +28,4 @@ var ComponentRegistry = {
   }
 };
 
-exports.default = ComponentRegistry;
+export default ComponentRegistry;

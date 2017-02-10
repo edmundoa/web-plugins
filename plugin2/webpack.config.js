@@ -34,6 +34,5 @@ module.exports = {
       manifest: vendorManifest,
     }),
   ],
-  target: 'web', // Make web variables accessible to webpack, e.g. window
-  progress: true
+  target: 'web' // Make web variables accessible to webpack, e.g. window
 };

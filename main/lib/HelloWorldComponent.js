@@ -1,24 +1,14 @@
-'use strict';
+import React from 'react';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var HelloWorldComponent = _react2.default.createClass({
+var HelloWorldComponent = React.createClass({
   displayName: 'HelloWorldComponent',
 
   propTypes: {
-    message: _react2.default.PropTypes.string
+    message: React.PropTypes.string
   },
 
   render: function render() {
-    return _react2.default.createElement(
+    return React.createElement(
       'p',
       null,
       'Hello World! ',
@@ -27,4 +17,4 @@ var HelloWorldComponent = _react2.default.createClass({
   }
 });
 
-exports.default = HelloWorldComponent;
+export default HelloWorldComponent;

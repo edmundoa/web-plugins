@@ -11,16 +11,16 @@
 
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
 /******/ 		};
 
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 
 /******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+/******/ 		module.l = true;
 
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -33,76 +33,94 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-	'use strict';
+module.exports = WebPluginsMain;
 
-	var _PluginTwo = __webpack_require__(1);
-
-	var _PluginTwo2 = _interopRequireDefault(_PluginTwo);
-
-	var _webPluginsMain = __webpack_require__(4);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	console.log('loading pluginTwo takes a while');
-	setTimeout(function () {
-	  _webPluginsMain.ComponentRegistry.register('pluginTwo', _PluginTwo2.default);
-	}, 4000);
-
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-	'use strict';
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web_plugins_main__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web_plugins_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_web_plugins_main__);
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
-	var _react = __webpack_require__(2);
 
-	var _react2 = _interopRequireDefault(_react);
+var PluginTwo = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
+  displayName: 'PluginTwo',
+  render: function render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_web_plugins_main__["HelloWorldComponent"], { message: 'You will not see this! ' + lol.wut });
+  }
+});
 
-	var _webPluginsMain = __webpack_require__(4);
+/* harmony default export */ __webpack_exports__["a"] = PluginTwo;
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var PluginTwo = _react2.default.createClass({
-	  displayName: 'PluginTwo',
-	  render: function render() {
-	    return _react2.default.createElement(_webPluginsMain.HelloWorldComponent, { message: 'You will not see this! ' + lol.wut });
-	  }
-	});
-
-	exports.default = PluginTwo;
-
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = (__webpack_require__(3))(298);
+module.exports = (__webpack_require__(3))(195);
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
-	module.exports = __vendor;
+module.exports = __vendor;
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-	module.exports = WebPluginsMain;
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PluginTwo__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web_plugins_main__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web_plugins_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_web_plugins_main__);
 
-/***/ }
+
+
+console.log('loading pluginTwo takes a while');
+setTimeout(function () {
+  __WEBPACK_IMPORTED_MODULE_1_web_plugins_main__["ComponentRegistry"].register('pluginTwo', __WEBPACK_IMPORTED_MODULE_0__PluginTwo__["a" /* default */]);
+}, 4000);
+
+/***/ })
 /******/ ]);

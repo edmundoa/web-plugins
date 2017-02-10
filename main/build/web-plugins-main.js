@@ -7,7 +7,7 @@
 		exports["WebPluginsMain"] = factory(require("__vendor"));
 	else
 		root["WebPluginsMain"] = factory(root["__vendor"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -21,16 +21,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
 /******/ 		};
 
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 
 /******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+/******/ 		module.l = true;
 
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -43,286 +43,257 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+module.exports = (__webpack_require__(1))(195);
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _exports = __webpack_require__(1);
-
-	Object.keys(_exports).forEach(function (key) {
-	  if (key === "default" || key === "__esModule") return;
-	  Object.defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _exports[key];
-	    }
-	  });
-	});
-
-	__webpack_require__(6);
-
-	var _react = __webpack_require__(3);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(7);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _MainApp = __webpack_require__(8);
-
-	var _MainApp2 = _interopRequireDefault(_MainApp);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// Needed for redux-saga es6 generator support
-	window.onload = function () {
-	  _reactDom2.default.render(_react2.default.createElement(_MainApp2.default, null), document.getElementById('app'));
-	};
-
-	// Import all the third party stuff
-
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-	'use strict';
+module.exports = __vendor;
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _HelloWorldComponent = __webpack_require__(2);
-
-	Object.defineProperty(exports, 'HelloWorldComponent', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_HelloWorldComponent).default;
-	  }
-	});
-
-	var _ComponentRegistry = __webpack_require__(5);
-
-	Object.defineProperty(exports, 'ComponentRegistry', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_ComponentRegistry).default;
-	  }
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+module.exports = (__webpack_require__(1))(194);
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(3);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var HelloWorldComponent = _react2.default.createClass({
-	  displayName: 'HelloWorldComponent',
-
-	  propTypes: {
-	    message: _react2.default.PropTypes.string
-	  },
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'p',
-	      null,
-	      'Hello World! ',
-	      this.props.message
-	    );
-	  }
-	});
-
-	exports.default = HelloWorldComponent;
-
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-	module.exports = (__webpack_require__(4))(298);
+"use strict";
+var plugins = {};
+var callbacks = [];
 
-/***/ },
+var ComponentRegistry = {
+  listen: function listen(callback) {
+    console.log('callback registered');
+    callbacks.push(callback);
+  },
+  register: function register(name, plugin) {
+    console.log('registering plugin: ', name);
+    plugins[name] = plugin;
+    callbacks.forEach(function (callback) {
+      return callback.onRegister(name, plugin);
+    });
+  },
+  unregister: function unregister(name) {
+    console.log('unregistering plugin: ', name);
+    plugins.delete(name);
+    callbacks.forEach(function (callback) {
+      return callback.onUnregister(name);
+    });
+  },
+  all: function all() {
+    return plugins;
+  },
+  get: function get(name) {
+    return plugins[name];
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = ComponentRegistry;
+
+/***/ }),
 /* 4 */
-/***/ function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-	module.exports = __vendor;
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
 
-	'use strict';
+var HelloWorldComponent = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
+  displayName: 'HelloWorldComponent',
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var plugins = {};
-	var callbacks = [];
+  propTypes: {
+    message: __WEBPACK_IMPORTED_MODULE_0_react___default.a.PropTypes.string
+  },
 
-	var ComponentRegistry = {
-	  listen: function listen(callback) {
-	    console.log('callback registered');
-	    callbacks.push(callback);
-	  },
-	  register: function register(name, plugin) {
-	    console.log('registering plugin: ', name);
-	    plugins[name] = plugin;
-	    callbacks.forEach(function (callback) {
-	      return callback.onRegister(name, plugin);
-	    });
-	  },
-	  unregister: function unregister(name) {
-	    console.log('unregistering plugin: ', name);
-	    plugins.delete(name);
-	    callbacks.forEach(function (callback) {
-	      return callback.onUnregister(name);
-	    });
-	  },
-	  all: function all() {
-	    return plugins;
-	  },
-	  get: function get(name) {
-	    return plugins[name];
-	  }
-	};
-
-	exports.default = ComponentRegistry;
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = (__webpack_require__(4))(1);
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = (__webpack_require__(4))(328);
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(3);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(7);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _HelloWorldComponent = __webpack_require__(2);
-
-	var _HelloWorldComponent2 = _interopRequireDefault(_HelloWorldComponent);
-
-	var _ComponentRegistry = __webpack_require__(5);
-
-	var _ComponentRegistry2 = _interopRequireDefault(_ComponentRegistry);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var MainApp = _react2.default.createClass({
-	  displayName: 'MainApp',
-	  getInitialState: function getInitialState() {
-	    return {
-	      components: []
-	    };
-	  },
-	  componentDidMount: function componentDidMount() {
-	    _ComponentRegistry2.default.listen({
-	      onRegister: this._updateComponents,
-	      onUnregister: this._updateComponents
-	    });
-	    this._updateComponents();
-	  },
-	  _loadComponents: function _loadComponents() {
-	    return _ComponentRegistry2.default.all();
-	  },
-	  _updateComponents: function _updateComponents() {
-	    this.setState({ components: this._loadComponents() }, this._renderPlugins);
-	  },
-	  _renderPlugins: function _renderPlugins() {
-	    var _this = this;
-
-	    var componentNames = Object.keys(this.state.components);
-
-	    componentNames.forEach(function (name) {
-	      try {
-	        _reactDom2.default.render(_react2.default.createElement(_this.state.components[name], { key: name }), _this.refs[name]);
-	      } catch (e) {
-	        console.error('There was an error while loading the plugin ' + name + ': ', e);
-	        _reactDom2.default.render(_react2.default.createElement(
-	          'p',
-	          { style: { color: 'red' } },
-	          'Error loading plugin ',
-	          name
-	        ), _this.refs[name]);
-	      }
-	    });
-	  },
-	  render: function render() {
-	    var componentNames = Object.keys(this.state.components);
-
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_HelloWorldComponent2.default, { message: 'This is dog!' })
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Plugin components: ',
-	          componentNames.join(', ')
-	        ),
-	        componentNames.map(function (name) {
-	          return _react2.default.createElement('div', { ref: name, key: name });
-	        })
-	      )
-	    );
-	  }
-	});
-
-	exports.default = MainApp;
-
-/***/ }
-/******/ ])
+  render: function render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'p',
+      null,
+      'Hello World! ',
+      this.props.message
+    );
+  }
 });
-;
+
+/* harmony default export */ __webpack_exports__["a"] = HelloWorldComponent;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__HelloWorldComponent__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ComponentRegistry__ = __webpack_require__(3);
+
+
+
+
+
+
+var MainApp = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
+  displayName: 'MainApp',
+  getInitialState: function getInitialState() {
+    return {
+      components: []
+    };
+  },
+  componentDidMount: function componentDidMount() {
+    __WEBPACK_IMPORTED_MODULE_3__ComponentRegistry__["a" /* default */].listen({
+      onRegister: this._updateComponents,
+      onUnregister: this._updateComponents
+    });
+    this._updateComponents();
+  },
+  _loadComponents: function _loadComponents() {
+    return __WEBPACK_IMPORTED_MODULE_3__ComponentRegistry__["a" /* default */].all();
+  },
+  _updateComponents: function _updateComponents() {
+    this.setState({ components: this._loadComponents() }, this._renderPlugins);
+  },
+  _renderPlugins: function _renderPlugins() {
+    var _this = this;
+
+    var componentNames = Object.keys(this.state.components);
+
+    componentNames.forEach(function (name) {
+      try {
+        __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(_this.state.components[name], { key: name }), _this.refs[name]);
+      } catch (e) {
+        console.error('There was an error while loading the plugin ' + name + ': ', e);
+        __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          { style: { color: 'red' } },
+          'Error loading plugin ',
+          name
+        ), _this.refs[name]);
+      }
+    });
+  },
+  render: function render() {
+    var componentNames = Object.keys(this.state.components);
+
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__HelloWorldComponent__["a" /* default */], { message: 'This is dog!' })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          null,
+          'Plugin components: ',
+          componentNames.join(', ')
+        ),
+        componentNames.map(function (name) {
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { ref: name, key: name });
+        })
+      )
+    );
+  }
+});
+
+/* harmony default export */ __webpack_exports__["a"] = MainApp;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__HelloWorldComponent__ = __webpack_require__(4);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__HelloWorldComponent__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ComponentRegistry__ = __webpack_require__(3);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__ComponentRegistry__["a"]; });
+
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(193);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_polyfill__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MainApp__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__exports__ = __webpack_require__(6);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "HelloWorldComponent", function() { return __WEBPACK_IMPORTED_MODULE_4__exports__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ComponentRegistry", function() { return __WEBPACK_IMPORTED_MODULE_4__exports__["b"]; });
+// Needed for redux-saga es6 generator support
+
+
+// Import all the third party stuff
+
+
+
+
+
+window.onload = function () {
+  __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__MainApp__["a" /* default */], null), document.getElementById('app'));
+};
+
+
+
+/***/ })
+/******/ ]);
+});
