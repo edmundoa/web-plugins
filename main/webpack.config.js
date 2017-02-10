@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var vendorManifest = require('./manifests/vendor-manifest.json');
 
 module.exports = {
   entry: {
@@ -27,6 +28,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: vendorManifest,
+    }),
     new HtmlWebpackPlugin({
       template: 'index.html',
       minify: false,

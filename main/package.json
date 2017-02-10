@@ -6,7 +6,7 @@
   "module": "app/app.js",
   "scripts": {
     "compile": "babel -d lib/ app/",
-    "build": "webpack --color"
+    "build": "webpack --config webpack.vendor.config.js && webpack --color"
   },
   "babel": {
     "presets": [
